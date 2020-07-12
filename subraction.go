@@ -17,6 +17,23 @@ func Subtract(originalList []interface{}, subtractList []interface{}) []interfac
 	return result
 }
 
+//SubtractStrings -
+func SubtractStrings(originalList []string, subtractList []string) []string {
+	result := make([]string, 0)
+	for _, original := range originalList {
+		exists := false
+		for _, subtract := range subtractList {
+			if subtract == original {
+				exists = true
+			}
+		}
+		if !exists {
+			result = append(result, original)
+		}
+	}
+	return result
+}
+
 //ElementsInBoth -
 func ElementsInBoth(firstList []interface{}, secondList []interface{}) []interface{} {
 	result := make([]interface{}, 0)
